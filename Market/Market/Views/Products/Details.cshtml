@@ -1,0 +1,44 @@
+﻿@model Market.Views.ViewModel.Default.DefaultViewModel
+@using Market.Models
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="info-section">
+    <img src="fhoto/IMG_4164-1.jpg">
+    <div class="info-middle">
+        <p style=" font-size: 22px;font-weight: bold;line-height: 1.3em;color: #414B5F;text-align: center;font-family: didot-w01-italic,serif;">Bütün supermarketlər haqqında<br> endirimlərdən xəbərdar ol,<br> bazarlığını bizdən et!</p>
+    </div>
+</section>
+
+<section id="watch">
+    <div class="container">
+        <div class="look mt-5">
+            <div class="row">
+                <div class="col-md-8">
+                    <img src="@Model.ProductDetail.Image ">
+                </div>
+                <div class="col-md-4 mt-5">
+                    <h1 style="font-family: 'Courier New', Courier, monospace;">@Model.ProductDetail.Name</h1>
+                    <p style="font-size: 20px;font-family: 'Courier New', Courier, monospace;">@Model.ProductDetail.Price AZN</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--   About -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12" style="border-right: double;font-family: 'Courier New', Courier, monospace;">
+            <h4>Product Info</h4>
+            <p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p>
+        </div>
+    </div>
+</div>
+
+
+<!--   About -->

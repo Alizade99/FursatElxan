@@ -1,0 +1,88 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model  Market.Views.ViewModel.Default.DefaultViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/MarketAdmin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Adi
+        </th>
+        <th>
+            Qiymeti
+        </th>
+        <th>
+            Vaxt
+        </th>
+        <th>
+            Category Adi
+        </th>
+        <th>
+            Discount Price
+        </th>
+        <th>
+            Icon Img
+        </th>
+        <th>
+            Amount
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Sub Category
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.productListPaged)
+    {
+        <tr>
+            <td style="width:25%">
+                <img src="@item.Image" class="img-thumbnail" alt="Alternate Text" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount_price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.İconimg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubCategory.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager(Model.productListPaged, _sayfaNo => Url.Action("Index", "Home", new { SayfaNo = _sayfaNo }))
+

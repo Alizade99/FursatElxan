@@ -1,0 +1,387 @@
+﻿@{
+    /**/
+
+    ViewBag.Title = "Online";
+    Layout = null;
+}
+@using Market.Views.ViewModel.Default;
+@model DefaultViewModel
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fursat.az/online</title>
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/online.css">
+    <link rel="stylesheet" href="~/css/search-filter.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <script src="https://kit.fontawesome.com/a5a64ef4c6.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="search-filter.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- <MARKET HEADER></MARKET> -->
+    <div class="market-header ">
+        <div class="fixed-menu" style="padding:0px 25px">
+            <div class="row mt-1 align-items-center">
+                <div class="row mt-4">
+                    <div class="pos-f-t">
+                        <nav class="navbar navbar-dark bg-dark">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="altmenu dropdown-menu" id="dropdownMenuButton" style="width: 230px;">
+                                <div class="dark p-4">
+                                    <div id="mySidenav" class="sidenav">
+                                        <div class="social row justify-content-center">
+                                            <i class="fab fa-facebook-f"></i>
+                                            <i class="fab fa-instagram"></i>
+                                        </div>
+                                        <a href="@Url.Action("Index","Home")" " style="color: black;">Home</a>
+                                        <a href="@Url.Action("Online","Home")" " style="color: black;">Online AlisVeris</a>
+                                        <a href="#" style="color: black;">Supermarkets</a>
+                                        <a href="#" style="color: black;">Haqqimizda</a>
+                                        <a href="@Url.Action("Contact","Home")" " style="color: black;">Elage</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <nav class="navbar navbar-expand-lg  p-0">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                                aria-expanded="false" aria-label="Toggle navigation"></button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav  main-menu">
+                                <ul class="d-flex m-0 p-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link   menu-a" href="online.html"
+                                           style="font-size: 16px;color: #d6ccc5; padding-right: 0;padding-left: 0">
+                                            Online
+                                            Alisveris
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown mainDrop">
+                                        <a class="nav-link dropdown-toggle"
+                                           style=" color: #d6ccc5;font-size: 16px;  font-weight: bold;" href="#"
+                                           id="navbarDropdown" role="button" data-toggle="dropdown"
+                                           aria-haspopup="true" aria-expanded="false">
+                                            Supermarkets
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="dropdown-item">
+                                                <input type="text" placeholder="Search.." id="myInput"
+                                                       onkeyup="filterFunction()">
+                                            </li>
+                                            <li class="dropdown-item">
+                                                <a class="nav-link" href="#">Bravo</a>
+                                            </li>
+
+                                            <li class="dropdown-item">
+                                                <a class="nav-link" href="#">Rahat Market</a>
+                                            </li>
+                                            <li class="dropdown-item">
+                                                <a class="nav-link" href="#">Grandmart</a>
+                                            </li>
+                                            <li class="dropdown-item">
+                                                <a class="nav-link" href="#">Bazarstore</a>
+                                            </li>
+                                            <li class="dropdown-item">
+                                                <a class="nav-link" href="https://www.neptun.az/">Neptun</a>
+                                            </li>
+                                            <li class="dropdown-item">
+                                                <a class="nav-link" href="#">Araz market</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-item nav-link  menu-a"
+                                           style="color: #d6ccc5; font-size: 16px; "
+                                           href="Market.html">Haqqımızda</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-item nav-link  menu-a" style="color: #d6ccc5;font-size: 16px;"
+                                           href="@Url.Action("Contact","Home")">Əlaqə </span></a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-sm-2 col-md-3">
+                    <div class="logo">
+                        <a href="@Url.Action("Index","Home")">
+                            <h3 style="margin: -5px 70px 0 0px;
+                        cursor: pointer;
+                        text-align: center;
+                        color: white;">
+                                Fursat
+                            </h3>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-sm-5 col-md-4 p-0 ">
+                    <div class="top-left  mt-2">
+                        <ul class="p-0">
+                            <!-- <li class><a href="#"> <img src="Fhoto/azerbaijan.png"></a></li>
+                            <li class><a href="#" style="font-size: 20px;"><img src="Fhoto/russia.png"></a></li> -->
+                            <li>
+                                <i class="fas fa-user-circle mt-1" style="color: white; font-size: 20px;"></i><a href="Login.html">Login</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fab fa-facebook-f web" style="color: white; font-size: 20px;"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fab fa-instagram web" style="color: white;font-size: 23px; "></i>
+                                </a>
+                            </li>
+                            <!-- Trigger the modal with a button -->
+                            <li>
+                                <span data-toggle="modal" data-target="#myModal">
+                                    <i class="fas fa-shopping-bag web "
+                                       style="color: white; font-size: 20px"></i>
+                                </span>
+                            </li>
+                        </ul>
+                        <!-- Modal -->
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog ">
+
+                                <!-- Modal content-->
+                                <div class="modal-content" style="display: block">
+                                    <div class="modal-header">
+
+                                        <h3 class="modal-title" style="text-align: center">Sebet</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <img src="Fhoto/food1.jpg" width="80%">
+                                            </div>
+                                            <div class="col-md-6" style="padding-top: 35px;">
+                                                <h3>Nutella</h3>
+                                                <h4>17.00AZN</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default"
+                                                data-dismiss="modal">
+                                            Bagla
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- <MARKET HEADER></MARKET> -->
+    <section id="info-section"
+             style="  background-image: url(https://www.iheartreykjavik.net/wp-content/uploads/2013/07/shopping.jpg);">
+        <div class="info-middle">
+            <p style=" font-size: 40px;font-weight: bold;line-height: 1.3em;margin-right: 25px;color: #414B5F;text-align: center;font-family: didot-w01-italic,serif;">
+                Birbaşa ünvana çatdırılma ilə <br>Fursatdən alış-veriş et!
+            </p>
+        </div>
+    </section>
+
+
+
+    <section id="filter">
+        <div class="container">
+            <div class="row searchFilter mt-5">
+                <div class="col-lg-12">
+                    <form action="/Home/Online" method="post">
+
+
+                        <div class="input-group" style="font-size: 17px">
+                            <select style="border-radius: 20px 0 0 20px;" name="İd">
+                                <option value="0">Butun kateqoriyalar</option>
+                                @foreach (var item in Model.Category)
+                                {
+                                    <optgroup label="@item.Name">
+                                        @foreach (var subItem in item.SubCategories)
+                                        {
+                                            <option value="@subItem.İd">@subItem.Name</option>
+                                        }
+                                    </optgroup>
+                                }
+                            </select>
+                            <select name="filterpro">
+                                <option value="0">Filter</option>
+                                <option value="desc_name">Ad(A-Z)</option>
+                                <option value="inc_name">Ad(Z-A)</option>
+                                <option value="desc_price">Coxdan-Aza</option>
+                                <option value="inc_price">Azdan-Coxa</option>
+                            </select>
+                            <input class="axtar" name="search_pro" type="text" placeholder="Axtar.." style="padding:4px ;">
+                            <div id="searchBtn" type="submit" class="btn btn-secondary btn-search" style="font-size: 16px;margin-bottom: 2px;border-radius: 0px 20px 20px 0px;" >
+                            <span class="glyphicon glyphicon-search">&nbsp;</span> <button type="submit" class="label-icon">Axtar</button>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="kategory">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-3 mt-5 col-sm-4">
+                    <div class="side">
+                        <ul class="menu">
+                            @foreach (var item in Model.Category)
+                            {
+                                <li class="menu-list">
+                                    <a href="@Url.Action("Online","Home",new { catId=item.Id})">@item.Name</a>
+                                    <ul class="menu-drop" id="icki">
+                                        @foreach (var subItem in item.SubCategories)
+                                        {
+                                            <li><a href="@Url.Action("Online","Home",new {subId=subItem.İd })">@subItem.Name</a></li>
+                                        }
+                                    </ul>
+                                </li>
+
+                            }
+
+                        </ul>
+
+
+
+                    </div>
+                </div>
+                <div class="col-lg-8 col-sm-8 ">
+                    <div class="row">
+                        @foreach (var item in Model.productList)
+                        {
+                            <div class="col-lg-3 mt-5  col-md-4 col-sm-6 col-12">
+                                <div class="discount">
+                                    <a href="item.html">
+                                        <div class="quickview">
+                                            <p style="font-size: 20px;">Quick View</p>
+                                        </div>
+                                        <img class="img-fluid mt-3" src="@item.Image" style="width: 80%">
+                                    </a>
+                                    <div class="discount-bottom">
+                                        <h3>@item.Name</h3>
+                                        @if (item.Discount_price != null)
+                                        {
+                                            <p style="color: black">@item.Discount_price AZN</p>
+                                        }
+                                        @if (item.Discount_price == null)
+                                        {
+                                            <p style="color: black">@item.Price AZN</p>
+
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- <Footer> -->
+    <footer>
+        <div class="container">
+            <h2 style="margin-bottom: 80px; margin-top: 30px;">Etrafli</h2>
+            <div class="row">
+                <div class="col-md-4">
+
+                    <p>Online alisveris</p>
+                    <p>Supermarketlerde endirim</p>
+                    <p>Haqqimizda</p>
+                    <p>Elaqe</p>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="header" style="margin-top:-70px">
+                        <h5>Yardim</h5>
+                        <hr align="left" style="width:60%;background-color: black">
+                        <div class="info mt-4">
+                            <p>FAQ</p>
+                            <p>Catdirilma haqqinda></p>
+                            <p>Market siyaseti</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="header" style="margin-top:-70px">
+                        <h5>Bizi izle</h5>
+                        <hr align="left" style="width:60%;background-color: black">
+                        <div class="footer-links mt-4 ">
+                            <ul>
+                                <li class="pb-3">
+                                    <a href="#" target="_blank">
+                                        <img src="Fhoto/fb.png" alt="">
+                                        <span>Facebook</span>
+                                    </a>
+                                </li>
+                                <li class="pb-3">
+                                    <a href="#" target="_blank">
+                                        <img src="Fhoto/insta2.png" alt="">
+                                        <span>Instagram</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!-- <Footer> -->
+
+
+
+    <script src="~/js/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/js/app.js"></script>
+    <script src="~/js/main.js"></script>
+    <script src="~/js/cart.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>
+
+

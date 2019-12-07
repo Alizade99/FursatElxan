@@ -1,0 +1,162 @@
+﻿
+@model Market.Views.ViewModel.Default.DefaultViewModel
+
+<section id="info-section">
+    <img src="fhoto/IMG-20191119-WA0005.jpg">
+    <div class="info">
+        <p>Bütün supermarketlər haqqında<br> endirimlərdən xəbərdar ol,<br> bazarlığını bizdən et!</p>
+        <!-- <a href="online.html"> <button class="buy mr-4">Online Alış-veriş Fursatdan</button></a> -->
+    </div>
+</section>
+
+<div class="container-fluid">
+    <div class="row" >
+        <hr align="right" width="20%" style="margin-top:100px;background-color:black;margin-right: 25px;">
+        <div class="yeni mt-5">
+            <h3>Yeni endirimlər</h3>
+            <p>Azərbaycanda olan ən böyük və məşhur supermarketlərdəki<br>endirimlərlə burada tanış ola bilərsiniz.</p>
+        </div>
+        <hr align="left" width="20%" style="margin-top: 100px;background-color:black;margin-left: 25px;">
+    </div>
+</div>
+<div class="logos">
+    <div class="container">
+        <div class="row">
+            @foreach (var allmarket in Model.allMarket)
+            {
+                <div class="col-lg-1 col-3 col-sm-3">
+                    <a href="@Url.Action("Index","Home",new { marId=allmarket.Id})">
+                        <img src="@allmarket.Image" class="img-fluid">
+                    </a>
+                </div>
+
+            }
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<div>
+    <section id="items mt-5">
+        <div class="container">
+            <div data-aos="fade-left">
+                @*<h4 class="mt-5" style="text-align:center;font-family:  raleway;"><mark>Endirimlər</mark></h4>*@
+            </div>
+            <section id="filter">
+                <div class="container">
+                    <div class="row searchFilter justify-content-center mt-2" >
+                        <div class=" ">
+                            <form method="post">
+
+
+                                <div class="input-group  d-flex" style="font-size: 17px">
+                                    <div class="col-lg-4  p-0 mb-2">
+                                        <select class="form-control" style="border-radius: 20px 0 0 20px;" name="İd">
+                                            <option value="0">Butun kateqoriyalar</option>
+                                            @foreach (var item in Model.Category)
+                                            {
+                                                <optgroup label="@item.Name">
+                                                    @foreach (var subItem in item.SubCategories)
+                                                    {
+                                                        <option value="@subItem.İd">@subItem.Name</option>
+                                                    }
+                                                </optgroup>
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4  p-0 mb-2">
+                                        <select class="form-control" name="filterpro">
+                                            <option value="0">Filter</option>
+                                            <option value="desc_name">Ad(A-Z)</option>
+                                            <option value="inc_name">Ad(Z-A)</option>
+                                            <option value="desc_price">Coxdan-Aza</option>
+                                            <option value="inc_price">Azdan-Coxa</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4 p-0 mb-2">
+                                        <div class="d-flex">
+                                            <input class="form-control" name="search_pro" type="text" placeholder="Axtar.." style="padding: 4px;height: 36px;">
+                                            <button id="searchBtn" type="submit" class="btn btn-secondary btn-search" style="font-size: 16px;margin-bottom: 2px;border-radius: 0px 20px 20px 0px;height: 36px;background-color: #17a2b8;">
+                                                Axtar
+                                            </button>
+                                        </div>
+                                     
+                                    </div>
+
+
+                                    
+                                    
+                                   
+                                </div>
+                            </form>
+                        </div>
+                        </div>
+                </div>
+            </section>
+            <div class="col-md-12">
+                <div class="container">
+                    <div class="row" style=" justify-content: center;">
+                        <div class="col-md-11">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="container">
+                                            <div class="row" style=" justify-content: center;">
+                                                @foreach (var item in Model.productList)
+                                                {
+                                                    <div class="col-md-3 col-6 col-sm-6 mt-3">
+                                                        <a href="@Url.Action("Details", "Products", new { id = item.Id })">
+                                                            <div class="discount">
+                                                                <div class="quickview">
+                                                                    <p>Quick View</p>
+                                                                </div>
+                                                                <div class="price">
+                                                                    <span><del>@item.Price</del>AZN</span>
+                                                                    <p>@item.Discount_price</p>
+                                                                </div>
+                                                                <div class="emblem"> <img style="object-fit: contain;" class="img-fluid" src="@item.İconimg">   </div>
+                                                                <img style="object-fit: contain;" class="img-fluid mt-3" src="@item.Image">
+                                                                <h4 style="color: black;">@item.Name</h4>
+                                                                <div class="date" style="display: flex;margin-top: 25px;">   <i class="far fa-calendar" style="color: green;padding: 12px 0px 0px 40px;"></i>  <p style="color: black;padding: 8px;font-size:17px;">Muddeti:<span>13 gun</span></p></div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                }
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+<!-- <Blog></Blog> -->
+<section id="blog" class="mt-5 col-md-12 col-lg-12 col-sm-12">
+    <div class="container-fluid slide-bord  mb-5 " style="font-family: 'Courier New', Courier, monospace">
+
+        <div class="owl-carousel owl-theme">
+            <div class="magaza  text-center">
+                <h4>Bu senin Fursetindir</h4>
+            </div>
+            <div class="magaza   text-center">
+                <h4>“ Supermarketlərdə olan endirimlər haqqında məlumatı 1 sayta daxil<br> olaraq əldə et-Fursat.az”</h4>
+            </div>
+            <div class="magaza text-center">
+                <h4>“Bazarlığınızı evdə oturaraq <br>rahat şəkildə edin”</h4>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- <Blog></Blog> -->

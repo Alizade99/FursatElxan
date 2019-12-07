@@ -1,0 +1,4 @@
+slideshow col-sm font-size
+product col-sm discount price
+dropdown menu
+footer FAQ

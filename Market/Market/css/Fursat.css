@@ -1,0 +1,276 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #f3f0f0; }
+     a {
+        text-decoration: none;  color: white
+     }
+        a:hover {
+        text-decoration: none;
+          color: white }
+          
+      ul {
+        list-style: none; } 
+          .top-left {
+            padding-left: 100px;
+           
+            }
+           .top-left ul li {
+            display: inline; 
+              padding: 14px;   
+}       
+#MediaHeader .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+ .sidenav .social {
+  border-bottom: 1px solid #e6e5e5;
+  padding-bottom: 7px;
+}
+ .sidenav .social i {
+  margin: 0 10px;
+  font-size: 22px;
+  color: #fbb901;
+}
+ .sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+ .sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #2a7c04;
+  display: block;
+  transition: 0.3s;
+}
+         .top-left ul li a {
+            color: white;
+            font-size: 17px;
+            font-family: raleway;
+          }
+      .top-left ul li a:hover {
+            color: black; 
+            text-decoration: none; 
+          }
+                    .top-left .web:hover{
+                       transform: rotate(+360deg);
+                       transition: transform .4s;
+                     }       
+                .market-header {
+                 position: relative;
+                 z-index: 9999;
+                 }      
+                 .fixed-menu{
+                   position: fixed;                  
+                   width: 100%;
+                   background-color:#2a7c04;
+                   height: 65px;
+                 }
+                 #info-section img{
+                  position: relative;
+                  height: 350px;
+                  width: 100%;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  background-attachment:fixed; 
+                 }
+                 #info-section .info-middle{
+                   position: absolute;
+                   left: 50%;
+                   text-align: center;
+                   top: 27%;
+                   transform: translate(-50%,-50%)
+                 }      
+                 .info{
+                  top: 250px;
+                  position: absolute;
+                  right: 0;
+                  left: 0;font-size: 22px;
+                  font-weight: bold;
+                  line-height: 1.3em;
+                  color: #414B5F;
+                  text-align: center;
+              
+                 }   
+                  .market-header .navbar-inverse {
+                    background-color: transparent;
+                    border-color: transparent; }
+                  .altmenu{
+                    width: 200px;
+                  }
+                  .market-header.navbar
+                   {  margin: 0px;
+                    padding: 0px; }
+                    .menu-a {
+                        font-weight: 700;
+                        color: #666666; }                     
+                  .mainDrop a{
+                    color:#666666;
+                  }          
+                  .mainDrop:hover .dropdown-menu{
+                    display: block
+                  }
+                  .dropdown-menu img{
+                    width: 20%;
+                  }
+                  .logos img{
+                    width: 100%;
+                    height: 100%;
+                  }
+                  .buy{
+                    background-color:rgba(255, 64, 64, 1);
+                    border-radius: 30px;
+                    font-size: 20px;
+                    padding: 10px;
+                  }
+                  .buy:hover{
+                    background-color :#09616e;
+                  }
+                  .yeni{
+                    text-align: center;
+                  }
+                  .discount{
+                    position: relative;
+                    
+                     overflow: hidden;
+                     background-color: white;
+                      text-align: center;
+                      border: 1px solid grey;
+                  }
+                  .discount:hover .quickview{
+                    color: rgb(247, 247, 247);
+                    transform: translateY(-110px);
+                  }
+                  .discount .quickview{
+                    position: absolute;
+                    transition: transform .4s;
+                    width: 100%;
+                    bottom: -50px;
+                    z-index: 5;
+                    height: 32px;
+                    color: #f8f8f8;
+                    cursor: pointer;
+                    margin-bottom: -62px;
+                    background-color: #666666;
+                }
+                .discount .quickview p{
+                  font-size: 20px
+                }
+                .discount h4{
+                  position: absolute;
+                  color: black;
+                  top: 220px;
+                  right: 0;
+                  left: 0;
+                  border-bottom: 3px solid red;
+                }
+                .price{
+                  position: absolute;
+                  top: 5px;
+                  right: 5px;
+                }
+                .price span{
+                  color: black;
+                  /* opacity: 0.7; */
+                  font-size: 18px;
+                  padding: 5px 5px 38px 7px;
+                  background-color: red;
+                  margin-left: 33px;
+                  position: relative;
+                }
+                    .price p {
+                        color: black;
+                        position: absolute;
+                        font-size: 18px;
+                        background-color: #2a7c04;
+                        top: 25px;
+                        background-color: #2a7c04;
+                        margin-left: 34px;
+                        left: 5px;
+                        right: 5px;
+                    }
+              .emblem{
+                top: 5px;
+                left: 5px;
+                position: absolute;
+                width: 25%;
+                height: 45%;
+              }
+             
+                  #items{
+                    background-image: url(https://www.iheartreykjavik.net/wp-content/uploads/2013/07/shopping.jpg)!important;
+                    background-position: center;
+                    background-size: cover;
+                  }
+                  #blog{
+                   background-color: darkslategray;
+                   height: 280px;
+                  }
+                  #blog .magaza{
+                    margin: 100px;                 
+                  }
+                  #blog .magaza h4{
+                    color: white;
+                    margin-bottom: 25px;
+                    padding-top: 25px;
+                  }
+                  .page-link {
+                    position: relative;
+                    display: block;
+                    padding: 0.5rem 0.75rem;
+                    margin-left: -1px;
+                    line-height: 1.25;
+                    color: black;
+                    background-color: #fff;
+                    border: 1px solid #dee2e6;
+                  }
+                 
+                 #searchBtn .btn-search:hover{
+                    background-color: red!important;       
+                 }
+
+
+                  footer .footer-links ul {
+                    margin: 0;
+                    padding: 0; }
+                    footer .footer-links ul li {
+                      list-style: none;
+                      transition: .3s;
+                      font-family: 'Courier New', Courier, monospace; }
+                      footer .footer-links ul li:hover {
+                        transform: translateX(2px); }
+                      footer .footer-links ul li a {
+                        text-decoration: none;
+                        color:black;
+                        font-family: 'Courier New', Courier, monospace; }
+                        footer .footer-links img{
+                          width: 35px;
+                          border-radius: 15px; }
+                        footer .footer-links ul li a:hover {
+                          text-decoration: none;
+                         }
+                  footer .footer-line {
+                    background-color: #f3f0f0; }
+                    .foot-text{
+                      font-size: 15px;
+                      font-family: 'Courier New', Courier, monospace;
+                      font-size: bold;
+                    }
+                    .owl-nav, .owl-dots{
+                      opacity: 0;
+                    }
+                 
